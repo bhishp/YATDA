@@ -2,4 +2,17 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  table
+    thead
+      tr
+        td #
+        td To-Do Item
+        td Description
+        td Due Date
+    tbody
+      each value, index in toDoList
+        tr
+          td= index + 1
+          td= toDoList[index][0]
+          td= toDoList[index][1]
+          td= toDoList[index][2]

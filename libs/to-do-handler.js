@@ -1,9 +1,10 @@
 var csv = require('csv');
 var fs = require('fs');
+var path = require('path');
 
-//TODO: Avoid these relative paths
-var toDoBhishPath = '../data/to-do-bhish.csv';
-var toDoBartPath = '../data/to-do-bart.csv';
+//TODO: Is this the best way to handle the paths?
+var toDoBhishPath = path.join(__dirname, '..', 'data', 'to-do-bhish.csv');
+var toDoBartPath = path.join(__dirname, '..', 'data', 'to-do-bart.csv');
 
 /**
  * A map of paths to csv files containing given user's to-do list
