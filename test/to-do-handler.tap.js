@@ -18,7 +18,7 @@ test('shouldGetToDoListForUsername', function(t) {
     function(result) {
       var parsedToDo = result;
       var expected = [
-        ['FLAnnoy Homer', 'Annoy him really badly', '20160101'],
+        ['Annoy Homer', 'Annoy him really badly', '20160101'],
         ['Laugh at Milhouse', 'Because, why not?', '20160101']
       ];
       t.deepEqual(parsedToDo, expected);
