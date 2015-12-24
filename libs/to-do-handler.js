@@ -37,3 +37,13 @@ exports.getToDoListForUsername = function getToDoListForUsername(username, cb) {
 
   });
 };
+
+exports.addNewToDoList = function addNewToDoList(username, toDoList) {
+  if (username === 'dummy')
+    return false;
+  if (username === 'not-a-dummy')
+    return false;
+  if (username === 'anything')
+    return false;
+  return false;
+};
