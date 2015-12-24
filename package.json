@@ -6,6 +6,8 @@
     "start": "node ./bin/www",
     "pretest": "echo 'running YATDA tests'",
     "test": "tape ./test/**/*.tap.js",
+    "test-cover": "istanbul cover node_modules/tape/bin/tape ./test/**/*.tap.js",
+    "test-coveralls": "istanbul cover node_modules/tape/bin/tape ./test/**/*.tap.js && cat ./coverage/lcov.info | ./node_modules/coveralls.js",
     "postinstall": "echo 'Thank-you for installing YATDA app'",
     "clean": "rimraf dist"
   },
@@ -20,6 +22,8 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "coveralls": "^2.11.6",
+    "istanbul": "^0.4.1",
     "rimraf": "^2.4.4",
     "tape": "^4.2.2"
   }
