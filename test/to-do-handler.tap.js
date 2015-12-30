@@ -1,11 +1,11 @@
 var test = require('tape');
 var toDo = require('../libs/to-do-handler');
 
-test('shouldGetToDoListForUsername', function(t) {
+test('shouldGetToDoListForUsername', function (t) {
   t.plan(2);
 
   toDo.getToDoListForUsername('bhish',
-    function(result) {
+    function (result) {
       var parsedToDo = result;
       var expected = [
         ['Make to-do app', 'A to-do application should be made for doing fun to-do type doing stuff. And it should be done before xmas!', '20151224'],
@@ -15,7 +15,7 @@ test('shouldGetToDoListForUsername', function(t) {
     });
 
   toDo.getToDoListForUsername('bart',
-    function(result) {
+    function (result) {
       var parsedToDo = result;
       var expected = [
         ['Annoy Homer', 'Annoy him really badly', '20160101'],
@@ -23,5 +23,4 @@ test('shouldGetToDoListForUsername', function(t) {
       ];
       t.deepEqual(parsedToDo, expected);
     });
-
 });
