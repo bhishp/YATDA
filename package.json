@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "pretest": "echo 'running YATDA tests'",
-    "test": "npm run lint && npm run test-tape",
+    "test": "npm run lint && npm run test-cover",
     "test-tape": "tape ./test/**/*.tap.js",
     "test-cover": "istanbul cover node_modules/tape/bin/tape ./test/**/*.tap.js",
     "test-coveralls": "istanbul cover node_modules/tape/bin/tape ./test/**/*.tap.js && cat ./coverage/lcov.info | ./node_modules/coveralls.js",
