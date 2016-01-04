@@ -1,8 +1,18 @@
+sudo: required
+
+services:
+ - docker
+
 language: node_js
+
 node_js:
   - "4.1"
   - "4.0"
   - "0.12"
+
+before_install:
+  - docker build -t bhish/yatda .
+
 script:
   - npm run test
 # Send coverage data to Coveralls
@@ -10,4 +20,5 @@ after_script:
   - "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
 # Notify DockerHub to build the Dockerfile
 after_success:
-  - "curl -H 'Content-Type: application/json' --data '{\"build\": true}' -X POST https://registry.hub.docker.com/u/bhish/yatda/trigger/846d61b7-48c5-42ce-843b-f83b35a33185/"
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push bhish/yatda
