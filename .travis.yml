@@ -8,3 +8,6 @@ script:
 # Send coverage data to Coveralls
 after_script:
   - "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+# Notify DockerHub to build the Dockerfile
+after_success:
+  - "curl -H 'Content-Type: application/json' --data '{\"build\": true}' -X POST https://registry.hub.docker.com/u/bhish/yatda/trigger/846d61b7-48c5-42ce-843b-f83b35a33185/"
