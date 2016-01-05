@@ -9,7 +9,8 @@ test('shouldGetToDoListForUsername', function (t) {
       var parsedToDo = result;
       var expected = [
         ['Make to-do app', 'A to-do application should be made for doing fun to-do type doing stuff. And it should be done before xmas!', '20151224'],
-        ['Admire to-do app', 'And then he read his to-dos, and, behold, it was very good.', '20151225']
+        ['Admire to-do app', 'And then he read his to-dos, and, behold, it was very good.', '20151225'],
+        ['Think about what I need to-do', 'What do I need to-do in order to build more of the to-do app? (Inception!)', '20160104']
       ];
       t.deepEqual(parsedToDo, expected);
     });
