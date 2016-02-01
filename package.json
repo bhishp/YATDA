@@ -1,7 +1,7 @@
 {
-  "name": "YATDA",
+  "name": "soc-yatda",
   "version": "0.0.0",
-  "private": true,
+  "publishConfig":{"registry":"http://46.101.91.197:4873/"},
   "scripts": {
     "start": "node ./bin/www",
     "pretest": "echo 'running YATDA tests'",
@@ -21,7 +21,8 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "supervillains": "^1.0.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.6",
